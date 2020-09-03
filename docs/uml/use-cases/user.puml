@@ -1,0 +1,36 @@
+@startuml
+
+!include ../config.txt
+
+title USE CASE
+
+left to right direction
+
+:Worker: as worker
+
+rectangle "User's use case" {
+    (ユーザーを登録する) as (create)
+    (ユーザーを更新する) as (update)
+    (ユーザーを削除する) as (delete)
+    (ユーザーを取得する) as (get)
+    (ユーザー一覧を取得する) as (list)
+}
+
+worker --> create: "sample text4"
+worker --> update
+worker --> delete
+worker --> get
+worker --> list
+
+note right of worker : sample text1
+
+note right of (create)
+sample text2
+sample text2
+end note
+
+note "sample text3" as N1
+(worker) .. N1
+N1 .. (create)
+
+@enduml
